@@ -12,10 +12,11 @@ const Services = () => {
             built only for you
           </h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Laudantium, et consequatur id aliquid rem inventore vero unde
-            aperiam sunt suscipit alias? Ullam inventore, fugiat non dignissimos
-            esse corrupti est accusantium.
+            We make furniture for keeping. Thoughtful products you won’t throw
+            away and timeless design that works with any home. Welcome to the
+            last bed frame you'll ever buy. You can breathe easy. Not only do we
+            make furniture that's super sturdy and built to last, but we employ
+            environmentally responsible sourcing and manufacturing practices.
           </p>
         </article>
         <div className="services-center">

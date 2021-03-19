@@ -8,9 +8,9 @@ const Contact = () => {
         <h3>Join our newsletter and get 20% off</h3>
         <div className="content">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla sed
-            nemo vitae tempora consequuntur illo deserunt, quam est ratione
-            minus.
+            Should incase you want to have all our exclusive products at your
+            finger tip like products on our featured products Subscribe now to
+            our top stories.
           </p>
           <form
             action="https://formspree.io/f/mbjpezrg"

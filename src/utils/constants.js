@@ -24,21 +24,20 @@ export const services = [
     icon: <GiCompass />,
     title: 'mission',
     text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+      'It starts with our designers who imagine the most relevant designs of today and tomorrow. It extends to our manufacturers who obsess over materials and details. ',
   },
   {
     id: 2,
     icon: <GiDiamondHard />,
     title: 'vision',
-    text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+    text: `We started in the fall of 2010 and introduced our first collection in 2012 at a trade show in Melbourne. Since then we've been making premium handmade furniture to order.`,
   },
   {
     id: 3,
     icon: <GiStabbedNote />,
     title: 'history',
     text:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
+      'comfy sloth began because we were tired of disposable furniture. So we set out to design products of lasting quality for how people live today. Furniture should be made for the home, not the landfill.',
   },
 ]
 
