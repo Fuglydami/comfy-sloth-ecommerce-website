@@ -3,16 +3,17 @@ import styled from 'styled-components'
 import { formatPrice } from '../utils/helpers'
 import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const Product = ({ image, name, price, id }) => {
   return (
     <Wrapper>
-      <div className="container">
+      <motion.div whileHover={{ scale: 1.1 }} className="container">
         <img src={image} alt={name} />
         <Link to={`/products/${id}`} className="link">
           <FaSearch />
         </Link>
-      </div>
+      </motion.div>
       <footer>
         <h5>{name}</h5>
         <p>{formatPrice(price)}</p>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
 import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 const Filters = () => {
   const {
@@ -47,7 +48,8 @@ const Filters = () => {
             <div>
               {categories.map((c, index) => {
                 return (
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.1, originX: 0 }}
                     key={index}
                     onClick={updateFilters}
                     type="button"
@@ -57,7 +59,7 @@ const Filters = () => {
                     }`}
                   >
                     {c}
-                  </button>
+                  </motion.button>
                 )
               })}
             </div>

@@ -7,13 +7,35 @@ import { links } from '../utils/constants'
 import CartButtons from './CartButtons'
 import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
+import { motion } from 'framer-motion'
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: -30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      duration: 2.5,
+    },
+  },
+}
 const Nav = () => {
   const { openSidebar } = useProductsContext()
   const { myUser } = useUserContext()
+
   return (
     <NavContainer>
-      <div className="nav-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="nav-center"
+      >
         <div className="nav-header">
           <Link to="/">
             <img src={logo} alt="comfy sloth" />
@@ -26,19 +48,19 @@ const Nav = () => {
           {links.map((link) => {
             const { id, text, url } = link
             return (
-              <li key={id}>
+              <motion.li whileHover={{ scale: 1.1 }} key={id}>
                 <Link to={url}>{text}</Link>
-              </li>
+              </motion.li>
             )
           })}
           {myUser && (
-            <li>
+            <motion.li whileHover={{ scale: 1.1 }}>
               <Link to="/checkout">checkout</Link>
-            </li>
+            </motion.li>
           )}
         </ul>
         <CartButtons />
-      </div>
+      </motion.div>
     </NavContainer>
   )
 }

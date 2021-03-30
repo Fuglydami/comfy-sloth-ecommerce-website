@@ -66,6 +66,16 @@ body {
   line-height: 1.5;
   font-size: 0.875rem;
 }
+body::-webkit-scrollbar {
+  width: 0.75em;
+  border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--clr-primary-7);
+  outline: 1px solid slategrey;
+}
+
 ul {
   list-style-type: none;
 }

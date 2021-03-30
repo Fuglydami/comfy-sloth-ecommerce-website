@@ -2,27 +2,53 @@ import React from 'react'
 import styled from 'styled-components'
 import { PageHero } from '../components'
 import aboutImg from '../assets/hero-bcg.jpeg'
+import { motion } from 'framer-motion'
 
+const heroVariants = {
+  hidden: {
+    opacity: 1,
+    y: 0,
+  },
+  visible: {
+    opacity: 0,
+    y: -20,
+  },
+}
 const AboutPage = () => {
   return (
     <main>
       <PageHero title="about" />
       <Wrapper className="page section section-page">
-        <img src={aboutImg} alt="nice desk" />
-        <article>
+        <motion.img
+          variants={heroVariants}
+          animate="hidden"
+          initial="visible"
+          transition={{ type: 'tween', duration: 1.5 }}
+          src={aboutImg}
+          alt="nice desk"
+        />
+        <motion.article
+          variants={heroVariants}
+          animate="hidden"
+          initial="visible"
+          transition={{ type: 'tween', duration: 1.5 }}
+        >
           <div className="title">
             <h2>our story</h2>
             <div className="underline"></div>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-            facilis suscipit sequi consectetur explicabo, voluptatum, alias,
-            dolores ipsum officia sint voluptates. Hic nulla sapiente veritatis
-            ullam, vero dolore eum est porro tempora consequuntur rem labore
-            minus maiores odit beatae cupiditate. Molestiae repellat vitae
-            reiciendis neque quae error aliquam delectus praesentium?
+            Comfy Sloth is an online furniture/home decor retailer. We began as
+            a regular Brick and Mortar furniture store located in South Florida
+            offering our customers brand name furniture at offordable prices.
+            Our retail locations are proudly serving residents of South Florida
+            and The Bahamas. <br />
+            Comfy Sloth is aimed to provide you with the latest in home
+            furnishings, home decor and accessories at a price you can afford We
+            always carry products that will be the focus of your home's decor
+            with superior selection, value and quality
           </p>
-        </article>
+        </motion.article>
       </Wrapper>
     </main>
   )

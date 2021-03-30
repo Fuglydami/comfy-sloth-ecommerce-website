@@ -1,15 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '-100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 1,
+      type: 'spring',
+      stiffness: 50,
+    },
+  },
+}
+
 const PageHero = ({ title, product }) => {
   return (
     <Wrapper>
-      <div className="section-center">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="section-center"
+      >
         <h3>
           <Link to="/">Home</Link>
           {product && <Link to="/products">/ Products</Link>}/ {title}
         </h3>
-      </div>
+      </motion.div>
     </Wrapper>
   )
 }

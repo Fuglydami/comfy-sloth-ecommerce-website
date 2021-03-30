@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Error from './Error'
 import Loading from './Loading'
 import Product from './Product'
+import { motion } from 'framer-motion'
 
 const FeaturedProducts = () => {
   const {
@@ -24,14 +25,25 @@ const FeaturedProducts = () => {
         <h2>featured products</h2>
         <div className="underline"></div>
       </div>
-      <div className="section-center featured">
+      <motion.div
+        transition={{ delay: 1.5, type: 'spring', stiffness: 50, duration: 2 }}
+        initial={{ x: '100vw' }}
+        animate={{ x: 0 }}
+        className="section-center featured"
+      >
         {featured.slice(0, 3).map((product) => {
           return <Product key={product.id} {...product} />
         })}
-      </div>
-      <Link to="/products" className="btn">
-        all products
-      </Link>
+      </motion.div>
+      <motion.div
+        transition={{ delay: 1.5, type: 'spring', stiffness: 50, duration: 2 }}
+        initial={{ x: '-100vw' }}
+        animate={{ x: 0 }}
+      >
+        <Link to="/products" className="btn">
+          all products
+        </Link>
+      </motion.div>
     </Wrapper>
   )
 }

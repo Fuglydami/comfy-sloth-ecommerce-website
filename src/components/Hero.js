@@ -3,15 +3,32 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import heroBcg from '../assets/hero-bcg.jpeg'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import { motion } from 'framer-motion'
 
+const heroVariants = {
+  hidden: {
+    opacity: 1,
+    y: 0,
+  },
+  visible: {
+    opacity: 0,
+    y: -20,
+  },
+}
 const Hero = () => {
   return (
     <Wrapper className="section-center">
-      <article className="content">
-        <h1>
+      <motion.article
+        variants={heroVariants}
+        animate="hidden"
+        initial="visible"
+        transition={{ type: 'tween', duration: 1.5 }}
+        className="content"
+      >
+        <motion.h1>
           design your <br />
           comfort zone
-        </h1>
+        </motion.h1>
         <p>
           From the beginning, we set out to be a very different kind of
           furniture company One that believes it is perfectly possible to make
@@ -19,14 +36,25 @@ const Hero = () => {
           is designed with one thing in mind: that it should complement your
           home beautifully.
         </p>
-        <Link to="/products" className="btn hero-btn">
-          shop now
-        </Link>
-      </article>
-      <article className="img-container">
+        <motion.div
+          transition={{ delay: 1.5, type: 'spring', stiffness: 50 }}
+          initial={{ x: '-100vw' }}
+          animate={{ x: 0 }}
+        >
+          <Link to="/products" className="btn hero-btn">
+            shop now
+          </Link>
+        </motion.div>
+      </motion.article>
+      <motion.article
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -20 }}
+        transition={{ duration: 2, type: 'tween' }}
+        className="img-container"
+      >
         <img src={heroBcg} alt="nice table" className="main-img" />
         <img src={heroBcg2} alt="person working" className="accent-img" />
-      </article>
+      </motion.article>
     </Wrapper>
   )
 }
