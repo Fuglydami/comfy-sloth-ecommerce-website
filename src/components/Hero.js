@@ -22,7 +22,7 @@ const Hero = () => {
         variants={heroVariants}
         animate="hidden"
         initial="visible"
-        transition={{ type: 'tween', duration: 1.5 }}
+        transition={{ type: 'tween', duration: 1 }}
         className="content"
       >
         <motion.h1>
@@ -37,7 +37,7 @@ const Hero = () => {
           home beautifully.
         </p>
         <motion.div
-          transition={{ delay: 1.5, type: 'spring', stiffness: 50 }}
+          transition={{ delay: 1, type: 'spring', stiffness: 50 }}
           initial={{ x: '-100vw' }}
           animate={{ x: 0 }}
         >

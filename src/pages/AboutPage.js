@@ -31,7 +31,7 @@ const AboutPage = () => {
           variants={heroVariants}
           animate="hidden"
           initial="visible"
-          transition={{ type: 'tween', duration: 1.5 }}
+          transition={{ type: 'tween', duration: 1 }}
         >
           <div className="title">
             <h2>our story</h2>

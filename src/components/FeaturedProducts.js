@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
         <div className="underline"></div>
       </div>
       <motion.div
-        transition={{ delay: 1.5, type: 'spring', stiffness: 50, duration: 2 }}
+        transition={{ delay: 1, type: 'spring', stiffness: 50, duration: 2 }}
         initial={{ x: '100vw' }}
         animate={{ x: 0 }}
         className="section-center featured"
