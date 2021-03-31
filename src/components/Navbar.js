@@ -24,6 +24,14 @@ const containerVariants = {
     },
   },
 }
+const imgVariants = {
+  hidden: { rotateX: -180 },
+  visible: {
+    rotateX: 0,
+    transition: { duration: 1 },
+  },
+}
+
 const Nav = () => {
   const { openSidebar } = useProductsContext()
   const { myUser } = useUserContext()
@@ -38,7 +46,7 @@ const Nav = () => {
       >
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="comfy sloth" />
+            <motion.img variants={imgVariants} src={logo} alt="comfy sloth" />
           </Link>
           <button className="nav-toggle" onClick={openSidebar}>
             <FaBars />
